@@ -42,8 +42,10 @@ This repository contains a comprehensive data analysis of developer survey data,
 
 The notebook features 15+ comprehensive visualizations across multiple analytical dimensions. Each visualization includes contextual notes and actionable suggestions for interpretation.
 
-## � Detailed Visualizations & Insights
+**🎨 To view all charts and graphs**: [Open the Jupyter Notebook on GitHub](https://github.com/stalcup-dev/stack-overflow-2024-trends/blob/main/survey_data_exploration_cleaning_insights.ipynb) - GitHub automatically renders all saved visualization outputs.
 
+## � Detailed Visualizations & Insights
+> **📌 Note**: All visualizations below are rendered with full images in the Jupyter Notebook. [**View the notebook on GitHub**](https://github.com/stalcup-dev/stack-overflow-2024-trends/blob/main/survey_data_exploration_cleaning_insights.ipynb) to see the complete analysis with all charts and graphs.
 ### 1. **Top 10 Skills and Tools** (4-panel dashboard)
 Displays the most commonly used technologies across four categories:
 - **Programming Languages** (JavaScript, Python, SQL, etc.)
