@@ -1,0 +1,10 @@
+# Exclude everything by default
+*
+*/
+
+# But include these specific files
+!survey_data_exploration_cleaning_insights.ipynb
+!DataAnalystPresentation.pdf
+!README.md
+!.gitignore
+!LICENSE
