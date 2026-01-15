@@ -38,238 +38,175 @@ This repository contains a comprehensive data analysis of developer survey data,
 4. **Remote Work**: Location-specific patterns indicate varying norms and policy environments
 5. **AI Tool Adoption**: Strong interest but lower current usage suggests implementation barriers
 
-### Visualizations Included
+## 📊 Visualizations & Insights
 
-The notebook features 15+ comprehensive visualizations across multiple analytical dimensions. Each visualization includes contextual notes and actionable suggestions for interpretation.
-
-**🎨 To view all charts and graphs**: [Open the Jupyter Notebook on GitHub](https://github.com/stalcup-dev/stack-overflow-2024-trends/blob/main/survey_data_exploration_cleaning_insights.ipynb) - GitHub automatically renders all saved visualization outputs.
-
-## � Detailed Visualizations & Insights
-> **📌 Note**: All visualizations below are rendered with full images in the Jupyter Notebook. [**View the notebook on GitHub**](https://github.com/stalcup-dev/stack-overflow-2024-trends/blob/main/survey_data_exploration_cleaning_insights.ipynb) to see the complete analysis with all charts and graphs.
-### 1. **Top 10 Skills and Tools** (4-panel dashboard)
-Displays the most commonly used technologies across four categories:
-- **Programming Languages** (JavaScript, Python, SQL, etc.)
-- **Databases** (PostgreSQL, MySQL, MongoDB, etc.)
-- **Platforms** (AWS, Azure, Docker, etc.)
-- **Web Frameworks** (React, Node.js, Express, etc.)
-
-**Key Insights:**
-- Counts represent multi-select mentions; one respondent can contribute multiple data points
-- High counts reflect survey composition rather than absolute market share
-- Long-tail tools signal niche opportunities for specialized roles
-
-**Actionable Recommendations:**
-- Compare "Have Worked With" vs "Want To Work With" to identify demand gaps
-- Segment by country, experience level, or role to reveal meaningful trends
-- Use as default dashboard filters for deeper analysis
+All 20+ visualizations from the analysis are displayed below with detailed insights and recommendations.
 
 ---
 
-### 2. **Age Distribution**
-Histogram showing the age demographics of survey respondents (using midpoint values from age ranges).
+### 1. Top 10 Skills and Tools
 
-**Key Insights:**
-- Distribution is approximate due to age range conversion
-- Shape reflects survey reach patterns more than overall developer population
-- Non-range responses are excluded, potentially reducing sample size
+![Top Skills](images/01_top_skills_tools.png)
 
-**Actionable Recommendations:**
-- Cross-reference with YearsCodePro to validate age-experience alignment
-- Use broader age cohorts (e.g., Early Career, Mid-Career, Senior) for stable comparisons
-- Consider cohort effects when interpreting technology adoption patterns
+**Insights**: Concentrated adoption in core technologies (JavaScript, SQL, Python) with long-tail opportunities in niche tools. Multi-select responses mean totals exceed respondent count.
+
+**Recommendations**: Compare "Have vs Want" to identify demand gaps; segment by experience/role for targeted skill development.
 
 ---
 
-### 3. **Top 15 Countries by Response Count**
-Bar chart showing geographic distribution of survey participants.
+### 2. Age Distribution
 
-**Key Insights:**
-- Response concentration varies significantly by country
-- Counts reflect survey reach, not proportional tech workforce representation
-- Geographic patterns influence other demographic findings
+![Age Distribution](images/02_age_distribution.png)
 
-**Actionable Recommendations:**
-- Normalize by population or tech workforce size when comparing countries
-- Set minimum sample size thresholds for country-level analysis
-- Consider regional economic factors when interpreting compensation data
+**Insights**: Distribution reflects survey reach patterns. Age midpoint conversion introduces approximation.
+
+**Recommendations**: Use broader cohorts for stability; cross-reference with experience metrics.
 
 ---
 
-### 4. **Job Satisfaction Distribution**
-Bar chart displaying self-reported job satisfaction levels across respondents.
+### 3. Top 15 Countries
 
-**Key Insights:**
-- Satisfaction levels depend on multiple factors: role, compensation, remote status, regional context
-- Self-reported data may be influenced by survey timing and current employment status
+![Top Countries](images/03_top_countries.png)
 
-**Actionable Recommendations:**
-- Compare job satisfaction by remote work arrangement or compensation band
-- Cross-reference with other workplace factors (tenure, company size, benefits)
-- Use as a baseline metric for workforce sentiment analysis
+**Insights**: US, Germany, and India lead responses. Counts reflect survey reach, not workforce proportions.
+
+**Recommendations**: Normalize by population; set minimum sample thresholds for comparisons.
 
 ---
 
-### 5. **Compensation Distribution** (Trimmed at 99th Percentile)
-Histogram and box plot showing annual compensation in USD.
+### 4. Job Satisfaction
 
-**Key Insights:**
-- **Right-skewed distribution**: Medians are more representative than means
-- Trimming at 99th percentile reveals typical salary ranges
-- Wide variance even within similar experience bands
+![Job Satisfaction](images/04_job_satisfaction.png)
 
-**Actionable Recommendations:**
-- Always use medians for central tendency in compensation analysis
-- Apply log scale transformations for better cross-group comparability
-- Segment by role, region, and remote status to control for confounding factors
+**Insights**: Most developers report satisfaction levels of 7-8/10. Context-dependent (role, comp, remote status).
+
+**Recommendations**: Segment by workplace factors; track trends over time.
 
 ---
 
-### 6. **Compensation by Remote Work Status**
-Box plots comparing salaries across remote work categories (Fully Remote, Hybrid, In-Office).
+### 5. Compensation Distribution
 
-**Key Insights:**
-- Remote work categories are self-reported and may vary by regional definitions
-- Compensation differences reflect both policy and geographic pay scales
+![Compensation Distribution](images/05_compensation_distribution.png)
+![Compensation Box Plot](images/06_compensation_boxplot.png)
 
-**Actionable Recommendations:**
-- Control for country and cost-of-living when comparing remote vs in-office pay
-- Track changes over time as remote work policies evolve
-- Consider role-specific remote work feasibility in analysis
+**Insights**: Right-skewed distribution; median more representative than mean. Wide variance within experience bands.
+
+**Recommendations**: Use medians; apply log scales; segment by role/region.
 
 ---
 
-### 7. **Experience vs Compensation Scatter Plot**
-Shows relationship between years of professional coding experience and annual compensation.
+### 6. Compensation by Remote Work
 
-**Key Insights:**
-- Positive correlation but with substantial noise and wide variance
-- Experience alone explains limited compensation variation
-- Role, geography, and company size are major confounding factors
+![Compensation by Remote](images/07_compensation_by_remote.png)
 
-**Actionable Recommendations:**
-- Add trend lines or median bands by experience buckets for clearer patterns
-- Segment by role and location to reduce variance
-- Treat as directional signal, not deterministic relationship
+**Insights**: Compensation differences across remote/hybrid/in-office reflect geography and policy.
+
+**Recommendations**: Control for cost-of-living; track policy evolution.
 
 ---
 
-### 8. **Numeric Correlations Heatmap**
-Correlation matrix showing relationships between years of experience, age, and compensation variables.
+### 7. Experience vs Compensation
 
-**Key Insights:**
-- Highlights linear relationships between numeric variables
-- Sensitive to outliers; correlations are descriptive, not causal
-- Age and experience show expected positive correlations
+![Experience vs Compensation](images/08_experience_vs_compensation.png)
 
-**Actionable Recommendations:**
-- Use as preliminary screening for multivariate models
-- Investigate high correlations for potential multicollinearity issues
-- Validate patterns with regression analysis for causal claims
+**Insights**: Positive correlation with substantial noise. Experience alone explains limited variance.
+
+**Recommendations**: Add median bands; segment by role/location.
 
 ---
 
-### 9. **Remote Work Mix by Top Countries** (Stacked Bar Chart)
-Shows the percentage breakdown of remote work arrangements within each top-responding country.
+### 8. Correlations Heatmap
 
-**Key Insights:**
-- Each bar totals 100%, showing within-country distribution
-- Significant variation across countries reflects cultural and policy differences
-- Only top countries by response count included to ensure stability
+![Correlations](images/09_correlations_heatmap.png)
 
-**Actionable Recommendations:**
-- Set minimum sample size thresholds to avoid unstable percentages
-- Compare remote work mix with compensation or job satisfaction
-- Consider regulatory environments and commute patterns by country
+**Insights**: Experience metrics highly correlated; weak correlation with compensation.
+
+**Recommendations**: Use for multivariate model screening; investigate multicollinearity.
 
 ---
 
-### 10. **Compensation by Education Level**
-Box plots showing salary distributions across different educational attainment levels.
+### 9. Remote Work by Country
 
-**Key Insights:**
-- Education categories are self-reported and uneven in sample size
-- Compensation is trimmed to reduce outlier influence
-- Education effect varies by role and experience level
+![Remote Work by Country](images/10_remote_work_by_country.png)
 
-**Actionable Recommendations:**
-- Cross-reference with YearsCodePro to add experience context
-- Group similar degree types for clearer readability
-- Account for geographic differences in educational requirements
+**Insights**: Significant variation across countries reflects cultural/policy differences.
+
+**Recommendations**: Consider regulatory environments; compare with satisfaction/compensation.
 
 ---
 
-### 11. **AI Tool Adoption: Current vs Interested** (Dual Bar Chart)
-Compares current AI tool usage with expressed interest in learning/using AI tools.
+### 10. Compensation by Education
 
-**Key Insights:**
-- Significant gap between current usage and stated interest
-- Multi-select mentions allow tools to appear in both categories
-- Gap reveals training needs and adoption friction points
+![Compensation by Education](images/11_compensation_by_education.png)
 
-**Actionable Recommendations:**
-- Calculate interest gap (interested − current) to identify growth opportunities
-- Prioritize tools with high interest but low current usage for training programs
-- Track adoption velocity over time to validate enablement efforts
+**Insights**: Education effect varies by role; professional degrees show highest median.
+
+**Recommendations**: Cross-reference with experience; group similar degrees.
 
 ---
 
-### 12. **Median Compensation by Developer Type** (Top 10)
-Bar chart showing median salaries across different developer specializations.
+### 11. AI Tools Adoption
 
-**Key Insights:**
-- Developer types are multi-select; respondents may appear in multiple categories
-- Median values reduce skew but still reflect regional mix effects
-- Specialization significantly impacts earning potential
+![AI Tools](images/12_ai_tools_adoption.png)
 
-**Actionable Recommendations:**
-- Include sample sizes to avoid over-interpreting small groups
-- Stratify by country or company size to control for structural pay differences
-- Use for career path planning and skill prioritization
+**Insights**: "Writing code" and "Search for answers" dominate current usage. Gap between current and interested reveals opportunities.
+
+**Recommendations**: Prioritize high-interest/low-usage tools for training.
 
 ---
 
-### 13. **Technology Gap Analysis: Languages & Databases** (Dumbbell & Gap Charts)
-Three-panel visualizations showing the difference between "Have Worked With" and "Want To Work With" for technologies.
+### 12. Compensation by Developer Type
 
-**Key Insights:**
-- **Positive gap** indicates rising demand and learning interest
-- Minimum threshold applied to avoid noise from niche technologies
-- Gap leaders signal "next wave" technologies for hiring and training
+![Compensation by DevType](images/13_compensation_by_devtype.png)
 
-**Actionable Recommendations:**
-- Treat gap leaders as hiring priorities for future-ready teams
-- Balance gap analysis with absolute counts to avoid overweighting niche tools
-- Update skill development roadmaps based on gap rankings
+**Insights**: Engineering managers and executives earn highest median. Specialization impacts compensation.
+
+**Recommendations**: Include sample sizes; stratify by geography.
 
 ---
 
-### 14. **AI Tool Adoption Gap Leaderboard** (Acceleration Score)
-Ranks AI tools by an acceleration score combining gap size and current adoption base.
+### 13. Languages Gap Analysis
 
-**Key Insights:**
-- Acceleration score = gap × log(current usage) to balance emerging vs established tools
-- High scores indicate tools with both momentum and existing user base
-- Filtered to exclude tools with minimal current adoption
+![Languages Dumbbell](images/14_languages_gap_dumbbell.png)
+![Languages Ranking](images/15_languages_gap_ranking.png)
+![Languages Heatmap](images/16_languages_heatmap.png)
 
-**Actionable Recommendations:**
-- Focus organizational AI strategy on high-acceleration tools
-- Differentiate between mainstream adoption and experimental tools
-- Monitor quadrant shifts (current vs interest rate) to identify inflection points
+**Insights**: Rust and Go show largest positive gaps. Gap leaders signal next-wave technologies.
+
+**Recommendations**: Treat gap leaders as hiring priorities; balance with absolute counts.
 
 ---
 
-### 15. **Job Satisfaction Drivers** (Coefficient/Correlation Chart)
-Shows top factors correlated with job satisfaction using linear regression or correlation analysis.
+### 14. Databases Gap Analysis
 
-**Key Insights:**
-- Directional signals only; not causal claims
-- Standardized coefficients allow cross-variable comparison
-- Model includes compensation, experience, education, and remote work factors
+![Databases Dumbbell](images/14_databases_gap_dumbbell.png)
+![Databases Ranking](images/15_databases_gap_ranking.png)
+![Databases Heatmap](images/16_databases_heatmap.png)
 
-**Actionable Recommendations:**
-- Treat results as hypotheses for deeper qualitative research
-- Validate with ordinal regression or classification models
-- Expand model with role-specific and country-specific controls for precision
+**Insights**: PostgreSQL and Redis show strong positive gaps. Emerging databases gaining interest.
+
+**Recommendations**: Update skill roadmaps; focus training on gap leaders.
+
+---
+
+### 15. AI Adoption Leaderboard
+
+![AI Leaderboard](images/20_ai_adoption_leaderboard.png)
+![AI Quadrant](images/21_ai_quadrant.png)
+
+**Insights**: Predictive analytics, deployment monitoring, and code review show high acceleration scores.
+
+**Recommendations**: Focus AI strategy on high-acceleration tools; monitor quadrant shifts.
+
+---
+
+### 16. Job Satisfaction Drivers
+
+![Job Satisfaction Drivers](images/22_job_satisfaction_drivers.png)
+
+**Insights**: Work experience and years coding show strongest correlations with satisfaction.
+
+**Recommendations**: Treat as directional signals; validate with multivariate models.
 
 ---
 
@@ -294,8 +231,8 @@ pip install pandas numpy matplotlib seaborn scikit-learn jupyter
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
+git clone https://github.com/stalcup-dev/stack-overflow-2024-trends.git
+cd stack-overflow-2024-trends
 ```
 
 2. Launch Jupyter Notebook:
@@ -310,7 +247,7 @@ jupyter notebook survey_data_exploration_cleaning_insights.ipynb
 ## 📈 Key Recommendations
 
 ### For Learners
-- Prioritize skills with high demand gaps (identified in gap analysis)
+- Prioritize skills with high demand gaps (Rust, Go, PostgreSQL, Redis)
 - Build SQL and analytics competencies around top databases
 - Develop AI-assisted workflow capabilities (prompting, QA, automation)
 
@@ -323,16 +260,6 @@ jupyter notebook survey_data_exploration_cleaning_insights.ipynb
 - Implement targeted upskilling programs for emerging tools
 - Tailor remote work policies based on regional norms
 - Address AI tool adoption barriers through training and integration support
-
-## 📊 Methodology
-
-1. **Data Acquisition**: Survey data ingestion and initial exploration
-2. **Data Cleaning**: Standardization, type conversion, and missing value treatment
-3. **Feature Engineering**: Age midpoint calculation, multi-select field parsing
-4. **Exploratory Analysis**: Distribution analysis, correlation studies, trend identification
-5. **Visualization**: Creating publication-ready charts and graphs
-6. **Insight Generation**: Translating findings into actionable recommendations
-7. **Presentation Development**: Executive summary and stakeholder communication
 
 ## ⚠️ Data Limitations
 

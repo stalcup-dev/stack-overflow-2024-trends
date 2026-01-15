@@ -8,3 +8,7 @@
 !README.md
 !.gitignore
 !LICENSE
+
+# Include images folder
+!images/
+!images/*.png
